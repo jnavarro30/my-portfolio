@@ -10,7 +10,7 @@ export const PROJECTS = [
       "Have you ever wanted to become a Pokemon trainer? Well, you are going to need your very own Pokedex to identify all those wild Pokemon! Simply use the controls already provided on the screen and bonus theme music included. ",
     technologies: ["Javascript", "React", "Sass", "HTML"],
     image: Pokedex,
-    link: "https://jn-pokedex.netlify.app/",
+    link: "https://jnavarro30.github.io/pokemon-pokedex/",
   },
   {
     title: "Coming Soon",
