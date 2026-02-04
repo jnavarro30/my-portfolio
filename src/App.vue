@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from "vue";
 import { IconBulb, IconBulbOff } from "@tabler/icons-vue";
-import myPic from "./images/profile-pic.png";
 
 import NavBar from "./components/NavBar.vue";
 import AboutSummary from "./components/home/AboutSummary.vue";
@@ -30,17 +29,6 @@ const triggerBounce = () => {
             <IconBulbOff v-if="darkTheme" :size="40" color="yellow" />
             <IconBulb v-else :size="40" color="yellow" />
           </IconButton>
-        </div>
-
-        <div class="mx-auto mt-4" style="max-width: 300px; aspect-ratio: 720 / 1080">
-          <img
-            class="rounded-md w-[250px] h-[250px] object-cover mx-auto"
-            :class="bounce ? 'animate__animated animate__bounce' : ''"
-            :src="myPic"
-            alt="Jesse Navarro"
-            width="250"
-            height="250"
-          />
         </div>
 
         <AboutSummary />
