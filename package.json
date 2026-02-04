@@ -15,21 +15,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.0",
-    "autoprefixer": "^10.4.5",
     "gh-pages": "^6.3.0",
     "postcss": "^8.4.12",
     "tailwindcss": "^3.0.24",
