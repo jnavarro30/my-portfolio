@@ -1,7 +1,7 @@
 import { List, Box } from "@mantine/core";
 
 function ProjectList() {
-  const projectTitles: string[] = [
+  const projectTitles = [
     "Kingdom of Dwarves",
     "Pokemon Pokedex",
     "Hangman",

@@ -6,7 +6,7 @@ import emailjs from "emailjs-com";
 function ContactForm() {
   const [icon, setIcon] = useState(true);
 
-  const sendEmail = (e: any) => {
+  const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs

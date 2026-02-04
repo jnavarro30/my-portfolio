@@ -4,12 +4,7 @@ import { Home } from "tabler-icons-react";
 import PortfolioDrawer from "./portfolio/portfolio-drawer";
 import ContactDrawer from "./contact/contact-drawer";
 
-interface AppProps {
-  setBounce: (a: boolean) => void;
-  darkTheme: boolean;
-}
-
-function Navbar( { setBounce, darkTheme }: AppProps) {
+function Navbar({ setBounce, darkTheme }) {
   const homeOnClick = () => {
     window.scrollTo(0, 0);
     setBounce(true);

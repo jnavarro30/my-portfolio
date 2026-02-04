@@ -12,8 +12,8 @@ import { ActionIcon } from "@mantine/core";
 import { Bulb, BulbOff } from "tabler-icons-react";
 
 function App() {
-  const [bounce, setBounce] = useState<boolean>(false);
-  const [darkTheme, setDarkTheme] = useState<boolean>(false);
+  const [bounce, setBounce] = useState(false);
+  const [darkTheme, setDarkTheme] = useState(false);
 
   return (
     <MantineProvider theme={{ colorScheme: darkTheme ? 'dark' : 'light' }} withGlobalStyles withNormalizeCSS>

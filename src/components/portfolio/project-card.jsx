@@ -7,15 +7,6 @@ import {
   useMantineTheme,
 } from "@mantine/core";
 
-interface ProjectProps {
-  projectTitle: string;
-  projectDescription: string;
-  projectTechnologies: string[];
-  projectImage: string;
-  projectId: string;
-  projectLink: string;
-}
-
 function ProjectCard({
   projectTitle,
   projectDescription,
@@ -23,7 +14,7 @@ function ProjectCard({
   projectImage,
   projectId,
   projectLink,
-}: ProjectProps) {
+}) {
   const theme = useMantineTheme();
 
   const secondaryColor =
