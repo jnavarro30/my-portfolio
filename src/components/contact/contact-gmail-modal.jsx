@@ -1,35 +1,28 @@
 import { useState } from "react";
-import { Modal, Group, useMantineTheme, ActionIcon } from "@mantine/core";
 import { BrandGmail } from "tabler-icons-react";
 // components
 import ContactForm from "./contact-form";
+import Modal from "../ui/Modal";
+import IconButton from "../ui/IconButton";
 
 function GmailModal() {
   const [opened, setOpened] = useState(false);
-  const theme = useMantineTheme();
 
   return (
     <>
       <Modal
-        opened={opened}
+        open={opened}
         onClose={() => setOpened(false)}
         title="Let's talk"
-        overlayColor={
-          theme.colorScheme === "dark"
-            ? theme.colors.dark[9]
-            : theme.colors.gray[2]
-        }
-        overlayOpacity={0.55}
-        overlayBlur={3}
       >
         <ContactForm />
       </Modal>
 
-      <Group position="center">
-        <ActionIcon size={40}>
-          <BrandGmail style={{color: "#e03c31"}} onClick={() => setOpened(true)} size={40} />
-        </ActionIcon>
-      </Group>
+      <div className="flex justify-center">
+        <IconButton size={40} ariaLabel="Open email" onClick={() => setOpened(true)}>
+          <BrandGmail style={{ color: "#e03c31" }} size={40} />
+        </IconButton>
+      </div>
     </>
   );
 }

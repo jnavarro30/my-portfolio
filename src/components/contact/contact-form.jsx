@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { TextInput, Textarea, ActionIcon } from "@mantine/core";
 import { Send, Check } from "tabler-icons-react";
 import emailjs from "emailjs-com";
+import IconButton from "../ui/IconButton";
 
 function ContactForm() {
   const [icon, setIcon] = useState(true);
@@ -33,35 +33,55 @@ function ContactForm() {
 
   return (
     <form className="grid gap-4" onSubmit={sendEmail}>
-      <TextInput
-        placeholder="first and last name"
-        label="Full Name"
-        name="name"
-        required
-      />
-      <TextInput
-        placeholder="email"
-        label="Email address"
-        name="email"
-        required
-      />
-      <TextInput
-        placeholder="subject"
-        label="Subject"
-        name="subject"
-        required
-      />
-      <Textarea placeholder="comments" label="your comments" name="comments" />
-      <ActionIcon
-        className="border-4 rounded w-1/2 p-2 justify-self-center hover:cursor-pointer hover:bg-white"
-        type="submit"
-      >
-        {icon ? (
-          <Send size={35} />
-        ) : (
-          <Check style={{ color: "green" }} size={35} />
-        )}
-      </ActionIcon>
+      <label className="grid gap-1">
+        <span className="text-sm font-montserrat">Full Name</span>
+        <input
+          className="rounded border border-black/20 dark:border-white/20 bg-white dark:bg-neutral-800 px-3 py-2"
+          placeholder="first and last name"
+          name="name"
+          required
+        />
+      </label>
+
+      <label className="grid gap-1">
+        <span className="text-sm font-montserrat">Email address</span>
+        <input
+          className="rounded border border-black/20 dark:border-white/20 bg-white dark:bg-neutral-800 px-3 py-2"
+          placeholder="email"
+          name="email"
+          type="email"
+          required
+        />
+      </label>
+
+      <label className="grid gap-1">
+        <span className="text-sm font-montserrat">Subject</span>
+        <input
+          className="rounded border border-black/20 dark:border-white/20 bg-white dark:bg-neutral-800 px-3 py-2"
+          placeholder="subject"
+          name="subject"
+          required
+        />
+      </label>
+
+      <label className="grid gap-1">
+        <span className="text-sm font-montserrat">Your comments</span>
+        <textarea
+          className="rounded border border-black/20 dark:border-white/20 bg-white dark:bg-neutral-800 px-3 py-2 min-h-[120px]"
+          placeholder="comments"
+          name="comments"
+        />
+      </label>
+
+      <div className="flex justify-center">
+        <IconButton
+          className="border-4 rounded w-1/2 p-2 hover:cursor-pointer hover:bg-white/70 dark:hover:bg-white/10"
+          type="submit"
+          ariaLabel="Send email"
+        >
+          {icon ? <Send size={35} /> : <Check style={{ color: "green" }} size={35} />}
+        </IconButton>
+      </div>
     </form>
   );
 }

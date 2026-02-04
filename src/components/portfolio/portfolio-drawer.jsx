@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Drawer, Group, ActionIcon } from "@mantine/core";
 import { Briefcase } from "tabler-icons-react";
 import useScrollPosition from "../../utils/custom-hooks";
 // components
 import ProjectList from "./project-list";
+import Drawer from "../ui/Drawer";
+import IconButton from "../ui/IconButton";
 
 function PortfolioDrawer() {
   const [opened, setOpened] = useState(false);
@@ -18,21 +19,20 @@ function PortfolioDrawer() {
     <>
       <Drawer
         className="font-montserrat"
-        opened={opened}
+        open={opened}
         onClose={handleOnClose}
         title="PROJECTS"
-        padding="xl"
         size="lg"
         lockScroll={false}
       >
         <ProjectList />
       </Drawer>
 
-      <Group position="center">
-        <ActionIcon size={40}>
-          <Briefcase style={{color: "#a0522d"}} onClick={() => setOpened(true)} size={40} />
-        </ActionIcon>
-      </Group>
+      <div className="flex justify-center">
+        <IconButton size={40} ariaLabel="Open projects" onClick={() => setOpened(true)}>
+          <Briefcase style={{ color: "#a0522d" }} size={40} />
+        </IconButton>
+      </div>
     </>
   );
 }

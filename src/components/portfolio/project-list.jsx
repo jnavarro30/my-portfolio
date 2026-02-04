@@ -1,5 +1,3 @@
-import { List, Box } from "@mantine/core";
-
 function ProjectList() {
   const projectTitles = [
     "Kingdom of Dwarves",
@@ -9,38 +7,17 @@ function ProjectList() {
   ];
 
   return (
-    <List spacing="lg" size="lg">
-      {projectTitles.map((title, index) => {
-        return (
-          <List.Item className="" key={index}>
-            <a href={`#${index}`}>
-              <Box
-                className="font-montserrat"
-                sx={(theme) => ({
-                  backgroundColor:
-                    theme.colorScheme === "dark"
-                      ? theme.colors.dark[6]
-                      : theme.colors.gray[0],
-                  textAlign: "center",
-                  padding: theme.spacing.xl,
-                  borderRadius: theme.radius.md,
-                  cursor: "pointer",
-
-                  "&:hover": {
-                    backgroundColor:
-                      theme.colorScheme === "dark"
-                        ? theme.colors.dark[5]
-                        : theme.colors.gray[1],
-                  },
-                })}
-              >
-                {title}
-              </Box>
-            </a>
-          </List.Item>
-        );
-      })}
-    </List>
+    <ul className="space-y-4">
+      {projectTitles.map((title, index) => (
+        <li key={index}>
+          <a href={`#${index}`} className="block">
+            <div className="font-montserrat text-center p-6 rounded-md cursor-pointer bg-gray-50 hover:bg-gray-100 dark:bg-white/5 dark:hover:bg-white/10">
+              {title}
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
   );
 }
 

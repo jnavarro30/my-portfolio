@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Drawer, Group, ActionIcon, Anchor } from "@mantine/core";
 import { At, BrandGithub, BrandLinkedin } from "tabler-icons-react";
 // components
 import GmailModal from "./contact-gmail-modal";
+import Drawer from "../ui/Drawer";
+import IconButton from "../ui/IconButton";
 
 function ContactDrawer() {
   const [opened, setOpened] = useState(false);
@@ -10,36 +11,36 @@ function ContactDrawer() {
   return (
     <>
       <Drawer
-        opened={opened}
+        open={opened}
         onClose={() => setOpened(false)}
         title="CONTACT"
-        padding="xl"
         size="xs"
         position="top"
       >
         <div className="flex justify-around p-4">
           <GmailModal />
-          <Anchor href="https://github.com/jnavarro30" target="_blank">
-            <ActionIcon size={40}>
-              <BrandGithub onClick={() => console.log("gmail")} size={40} />
-            </ActionIcon>
-          </Anchor>
-          <Anchor
+          <a href="https://github.com/jnavarro30" target="_blank" rel="noreferrer">
+            <IconButton size={40} ariaLabel="GitHub">
+              <BrandGithub size={40} />
+            </IconButton>
+          </a>
+          <a
             href="https://www.linkedin.com/in/jessenavarro42/"
             target="_blank"
+            rel="noreferrer"
           >
-            <ActionIcon size={40}>
-              <BrandLinkedin style={{color: "#4682b4"}} onClick={() => console.log("gmail")} size={40} />
-            </ActionIcon>
-          </Anchor>
+            <IconButton size={40} ariaLabel="LinkedIn">
+              <BrandLinkedin style={{ color: "#4682b4" }} size={40} />
+            </IconButton>
+          </a>
         </div>
       </Drawer>
 
-      <Group position="center">
-        <ActionIcon size={40}>
-          <At style={{color: "#4169e1"}} onClick={() => setOpened(true)} size={40} />
-        </ActionIcon>
-      </Group>
+      <div className="flex justify-center">
+        <IconButton size={40} ariaLabel="Open contact" onClick={() => setOpened(true)}>
+          <At style={{ color: "#4169e1" }} size={40} />
+        </IconButton>
+      </div>
     </>
   );
 }

@@ -1,18 +1,10 @@
-import { SimpleGrid } from "@mantine/core";
 import { PROJECTS } from "../../data/projects-info";
 // components
 import ProjectCard from "./project-card";
 
 function ProjectsPage() {
   return (
-    <SimpleGrid
-      className="mb-8"
-      spacing="lg"
-      breakpoints={[
-        { minWidth: "xs", cols: 2, spacing: "sm" },
-        { maxWidth: "xs", cols: 1, spacing: "sm" },
-      ]}
-    >
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
       {PROJECTS.map((project, index) => (
         <ProjectCard
           key={index}
@@ -24,7 +16,7 @@ function ProjectsPage() {
           projectLink={project.link}
         />
       ))}
-    </SimpleGrid>
+    </div>
   );
 }
 
